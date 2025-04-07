@@ -28,5 +28,4 @@ def test_base64_encoding():
 # Точка входу
 if __name__ == "__main__":
     print_encoded_steps(steps)
-    print()  # Порожній рядок для зручності
     test_base64_encoding()
