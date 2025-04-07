@@ -1,0 +1,14 @@
+{
+  "tests": [
+    {
+      "name": "Base64 Test",
+      "setup": "pip install -r requirements.txt || true",
+      "run": "python3 main.py",
+      "input": "",
+      "output": "✅ All tests passed.",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 10
+    }
+  ]
+}
