@@ -1,24 +1,20 @@
 import base64
 
-# Список етапів SDLC
-steps = ["plan", "code", "test", "delivery", "deploy", "monitor"]
-
-# Функція кодування у base64
+# TODO: Реалізуйте функцію encode_base64(text: str) -> str
 def encode_base64(text: str) -> str:
-    return base64.b64encode(text.encode()).decode()
+    pass  # замініть цю строчку своєю реалізацією
 
-# Функція декодування з base64
+# TODO: Реалізуйте функцію decode_base64(encoded: str) -> str
 def decode_base64(encoded: str) -> str:
-    return base64.b64decode(encoded.encode()).decode()
+    pass  # замініть цю строчку своєю реалізацією
 
-# Основна логіка: виведення етапів
-def print_encoded_steps(steps):
-    for i, step in enumerate(steps, 1):
-        encoded = encode_base64(step)
-        print(f"{i}. {step} -> {encoded}")
+# TODO: Реалізуйте функцію для виводу етапів SDLC у форматі base64
+def print_encoded_steps(steps: list):
+    pass  # замініть цю строчку своєю реалізацією
 
-# Автоматизований тест
+# Автоматизований тест — не змінюйте!
 def test_base64_encoding():
+    steps = ["plan", "code", "test", "delivery", "deploy", "monitor"]
     for step in steps:
         encoded = encode_base64(step)
         decoded = decode_base64(encoded)
@@ -27,5 +23,7 @@ def test_base64_encoding():
 
 # Точка входу
 if __name__ == "__main__":
+    steps = ["plan", "code", "test", "delivery", "deploy", "monitor"]
     print_encoded_steps(steps)
+    print()
     test_base64_encoding()
