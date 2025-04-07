@@ -1,0 +1,29 @@
+name: Autograding Tests
+'on':
+- push
+- repository_dispatch
+permissions:
+  checks: write
+  actions: read
+  contents: read
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: Base64 Test
+      id: base64-test
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Base64 Test
+        setup-command: ''
+        command: python3 main.py
+        timeout: 10
+    - name: Autograding Reporter
+      uses: classroom-resources/autograding-grading-reporter@v1
+      env:
+        BASE64-TEST_RESULTS: "${{steps.base64-test.outputs.result}}"
+      with:
+        runners: base64-test
