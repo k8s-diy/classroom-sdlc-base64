@@ -14,20 +14,26 @@
 ["plan", "code", "test", "delivery", "deploy", "monitor"]
 ```
 
+Ваше завдання:
+
 1. Напишіть функцію `encode_base64(text: str) -> str`, яка кодує текст у формат Base64 (тип повернення — **рядок**).
 2. Напишіть функцію `decode_base64(encoded: str) -> str`, яка виконує зворотне декодування.
 3. Створіть функцію `print_encoded_steps(steps: list)`, яка виводить список з кроками у зазначеному форматі:
 ```
-1. plan -> cGxhbg==
-2. code -> Y29kZQ==
+1. b'cGxhbg=='
+2. b'Y29kZQ=='
 ...
 ```
+
 ## ✅ Очікуваний результат
 
 ```bash
-1. plan -> cGxhbg==
-2. code -> Y29kZQ==
-...
+1. plan -> b'cGxhbg=='
+2. code -> b'Y29kZQ=='
+3. test -> b'dGVzdA=='
+4. delivery -> b'ZGVsaXZlcnk='
+5. deploy -> b'ZGVwbG95'
+6. monitor -> b'bW9uaXRvcg=='
 
 ✅ All tests passed.
 ```
@@ -54,15 +60,6 @@ python3 main.py
 
 Використовуйте модуль `base64`, який вже є в стандартній бібліотеці Python.
 
-```python
-import base64
-
-# Кодування
-encoded = base64.b64encode("text".encode()).decode()
-
-# Декодування
-decoded = base64.b64decode(encoded.encode()).decode()
-```
 ---
 
 Успіхів! 🚀
